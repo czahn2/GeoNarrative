@@ -24,8 +24,8 @@
       <source src="assets/intro.mp4" type="video/mp4">
     </video>
     <div id="intro">
-      <h1>A GeoNarrative Template</h1>
-      <h5>This line is a place holder for subtitle</h5>
+      <h1>Airports Across the Globe</h1>
+      <h5>by Camille Zahn</h5>
       <p>This section shows where active research is happening, and on what topics to communicate on-going nature of
         scientific learning. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula
@@ -51,7 +51,7 @@
         nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
 
       <div class="footnote">
-        <span> This line is a place holder for copyright note or other footnotes.</span>
+        <span> Created using mapbox. Template from Bo Zhao.</span>
         <a target="_blank" href="https://www.uw.edu"> <img src="img/uw_logo.png" width="50px"></a>
       </div>
     </div>
@@ -152,10 +152,10 @@
     map = new mapboxgl.Map({
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/light-v10',
-      zoom: 7, // starting zoom
+      zoom: 3, // starting zoom
       minZoom: 3,
       maxZoom: 10,
-      center: [-121.93, 47.33], // starting center
+      center: [-98, 39], // starting center
       scrollZoom: false,
       boxZoom: false,
       doubleClickZoom: false
@@ -169,10 +169,10 @@
     async function geojsonFetch() {
 
       // 6 wait till the data of washington counties and celltowers are fully loaded.
-      let response, counties, celltowers;
-      response = await fetch("assets/wacountydata.geojson");
+      let response, counties, airports;
+      response = await fetch("assets/counties.json");
       counties = await response.json();
-      response = await fetch("assets/celltowers.geojson");
+      response = await fetch("assets/airports.json");
       celltowers = await response.json();
 
 
@@ -180,9 +180,9 @@
       map.on('load', () => {
 
         // 8. add map source and declare layers.
-        map.addSource('celltowers-src', {
+        map.addSource('airports-src', {
           type: 'geojson',
-          data: celltowers
+          data: airports
         });
 
         map.addSource('counties-src', {
@@ -201,10 +201,10 @@
           }
         };
 
-        cellTowersLayer = {
-          'id': 'celltowers-points',
+        airportsLayer = {
+          'id': 'airports-points',
           'type': 'circle',
-          'source': 'celltowers-src',
+          'source': 'airports-src',
           'minzoom': 5,
           'paint': {
             'circle-color': 'red',
@@ -231,8 +231,8 @@
           if (index === 0) { // When enter the first scene
 
             map.flyTo({
-              center: [-121.93, 47.33],
-              zoom: 8,
+              center: [-98, 39],
+              zoom: 4,
               pitch: 0,
               speed: 0.5
             }); // fly to a new location
@@ -254,31 +254,31 @@
 
           } else if (index === 1) { // When enter the second scene.
             map.flyTo({
-              center: [-121.93, 47.33],
-              zoom: 8,
+              center: [-80, 38],
+              zoom: 5,
               pitch: 60,
               speed: 0.5
 
             });
 
-            if (typeof (map.getSource('celltowers-src')) == 'undefined') {
-              map.addSource('celltowers-src', {
+            if (typeof (map.getSource('airports-src')) == 'undefined') {
+              map.addSource('airports-src', {
                 type: 'geojson',
-                data: celltowers
+                data: airports
               });
             } else {
-              map.getSource('celltowers-src').setData(celltowers);
+              map.getSource('airports-src').setData(airports);
 
             }
 
-            if (!map.getLayer("celltowers-points")) {
-              map.addLayer(cellTowersLayer);
+            if (!map.getLayer("airports-points")) {
+              map.addLayer(airportsLayer);
             }
           } else if (index === 2) {
             //Relocate to Seattle
             map.flyTo({
-              center: [-122.4121036, 47.6131229],
-              zoom: 12,
+              center: [-98, 39],
+              zoom: 4,
               pitch: 0,
               speed: 0.5
 
@@ -287,8 +287,8 @@
           } else if (index === 3) {
             //Relocate to Portland
             map.flyTo({
-              center: [-122.724366, 45.5428119],
-              zoom: 12,
+              center: [-55, -8],
+              zoom: 4,
               pitch: 60,
               speed: 0.5
 
@@ -298,8 +298,8 @@
           } else if (index === 6) {
 
             map.flyTo({
-              center: [-122.4121036, 47.6131229],
-              zoom: 12,
+              center: [-98, 39],
+              zoom: 4,
               pitch: 0,
               speed: 0.5
 
@@ -323,8 +323,8 @@
               document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
             }
           } else if (index === 1) {
-            if (map.getLayer("celltowers-points")) {
-              map.removeLayer('celltowers-points');
+            if (map.getLayer("airports-points")) {
+              map.removeLayer('airports-points');
             }
           } else if (index === 3) {
             //exit to Portland
