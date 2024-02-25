@@ -173,7 +173,7 @@
       response = await fetch("assets/counties.json");
       counties = await response.json();
       response = await fetch("assets/airports.json");
-      celltowers = await response.json();
+      airports = await response.json();
 
 
       // 7. Trigger operations inside of the the ()=> {} funciton while loading the map.
@@ -284,6 +284,20 @@
 
             });
 
+            if (typeof (map.getSource('airports-src')) == 'undefined') {
+              map.addSource('airports-src', {
+                type: 'geojson',
+                data: airports
+              });
+            } else {
+              map.getSource('airports-src').setData(airports);
+
+            }
+
+            if (!map.getLayer("airports-points")) {
+              map.addLayer(airportsLayer);
+            }
+
           } else if (index === 3) {
             //Relocate to Portland
             map.flyTo({
@@ -294,7 +308,21 @@
 
             });
 
-            map.setStyle('mapbox://styles/mapbox/satellite-streets-v10'); // change the base map
+            if (typeof (map.getSource('airports-src')) == 'undefined') {
+              map.addSource('airports-src', {
+                type: 'geojson',
+                data: airports
+              });
+            } else {
+              map.getSource('airports-src').setData(airports);
+
+            }
+
+            if (!map.getLayer("airports-points")) {
+              map.addLayer(airportsLayer);
+            }
+
+            map.setStyle('mapbox://styles/mapbox/dark-v10'); // change the base map
           } else if (index === 6) {
 
             map.flyTo({
