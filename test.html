@@ -21,12 +21,34 @@
   <section id="cover">
     <!-- loading a video as the background -->
     <video class="fullscreen canvas-center" playsinline="" autoplay="" muted="" loop="">
-      <source src="assets/airplane.mp4" type="video/mp4">
+      <source src="assets/intro.mp4" type="video/mp4">
     </video>
     <div id="intro">
       <h1>Airports Across the Globe</h1>
       <h5>by Camille Zahn</h5>
-      <p>these are words about airports</p>
+      <p>This section shows where active research is happening, and on what topics to communicate on-going nature of
+        scientific learning. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula
+        eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede
+        justo,
+        fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdet a, venenatis vitae, justo.
+        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+        Aenean
+        vulputate
+        eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+        dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+        Aenean imperdiet.
+        Etiam
+        ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus,
+        tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
+        blandit
+        vel,
+        luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero
+        venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla
+        mauris sit
+        amet
+        nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
 
       <div class="footnote">
         <span> Created using mapbox. Template from Bo Zhao.</span>
@@ -43,51 +65,49 @@
     </div>
 
     <article class="scene" data-scene="0">
-      <h2>Airport Organization in the US</h2>
-      <p>As of 2021, there are approximately 20,000 airports in the United States of America. The vast majority
-        of the United States' 3,100 counties have at least one airport, which vary widely in purpose and type.
-        Major metropolitan areas tend to have one or multiple large international airports that serve both commercial
-        aviation passengers and cargo and trade companies. Rural counties sometimes have small regional airports that can connect
-        people and goods to larger cities and the rest of the world.
-      </p>
+      <h2>STEP 1: Loading Polygons</h2>
     </article>
     <article class="scene" data-scene="1">
-      <h2>Airport Locations</h2>
-      <p>This map shows the locations of each airport in the United States.</p>
+      <h2>STEP 2: Loading Points</h2>
     </article>
     <article class="scene" data-scene="2">
-      <h2>Entire US View</h2>
+      <h2>STEP 3: Relocate to Place A (Seattle)</h2>
     </article>
     <article class="scene" data-scene="3">
-      <h2>South America</h2>
-      <p>In comparison to the US and North America, nations in the global South such as Brazil and 
-        Argentina have significantly fewer airports. The people that live in these countries, especially
-        in rural regions, are extremely isolated and lack easy access to global transportation. 
-      </p>
+      <h2>STEP 4: Relocate to Place B (Portland)</h2>
     </article>
     <article class="scene" data-scene="4">
-      <h2>Sources and Acknowledgements</h2>
-      <p> This GeoNarrative project was created using OpenStreetMap and Mapbox for javascript.
-        Template code created by Bo Zhao. 
-        The United States Counties polygon data, as well as the airports points data were sourced from
-        <a href="https://www.naturalearthdata.com/downloads/">Natural Earth Data</a>
-        Video and image from <a href="https://www.pexels.com/">Pexels</a>
+      <h2>STEP 5: Text Script</h2>
+      <p>This section shows where active research is happening, and on what topics to communicate on-going nature of
+        scientific learning. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+        Aenean massa.
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+        ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+        vel, aliquet nec,
+        vulputate eget, arcu. In enim justo, rhoncus ut, imperdet a, venenatis vitae, justo. Nullam dictum felis eu pede
+        mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate.
       </p>
       <hr>
       <div>
+        <!-- loading bootstrap icons -->
+        <p><i class="bi bi-person"></i> <span>2,823</span>
+        </p>
+        <p><i class="bi bi-map"></i> <span>3,520</span>
+        </p>
+      </div>
     </article>
     <article class="scene" data-scene="5">
-      <h2>Image</h2>
-      <img src="img/airplanes.jpg"></img>
+      <h2>STEP 6: Image </h2>
+      <img src="img/portland.jpg"></img>
     </article>
     <article class="scene fullscreen" data-scene="6">
-      <h2></h2>
+      <h2>STEP 7: Ending Page</h2>
     </article>
 
   </section>
 
   <section id="footer">
-    <h2>Thanks for reading!</h2>
+    <h2>FOOTER</h2>
   </section>
 
 
@@ -127,7 +147,7 @@
 
     // 4. Initialize the mapbox
     mapboxgl.accessToken =
-      'pk.eyJ1IjoiY3phaG4yIiwiYSI6ImNsczNuODdlZTBvNXQyaXBidXZpZXdiamUifQ.VVwXh_XspA4FJt3D-mS7og'; // Assign the access token
+      'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw'; // Assign the access token
    
     map = new mapboxgl.Map({
       container: 'map', // container ID
@@ -156,6 +176,7 @@
       airports = await response.json();
 
 
+    };
       // 7. Trigger operations inside of the the ()=> {} funciton while loading the map.
       map.on('load', () => {
 
@@ -166,15 +187,15 @@
         });
 
         map.addSource('counties-src', {
-          type: 'geojson',
-          data: counties
+            type: 'geojson',
+            data: counties
         });
 
         countiesLayer = {
           'id': 'counties-polygons',
           'type': 'fill',
           'source': 'counties-src',
-          'minzoom': 1,
+          'minzoom': 5,
           'paint': {
             'fill-color': '#0080ff',
             'fill-opacity': 0.5
@@ -185,10 +206,10 @@
           'id': 'airports-points',
           'type': 'circle',
           'source': 'airports-src',
-          'minzoom': 1,
+          'minzoom': 5,
           'paint': {
-            'circle-color': 'blue',
-            'circle-radius': 6,
+            'circle-color': 'red',
+            'circle-radius': 4,
             'circle-opacity': 0.8,
           }
         };
@@ -255,10 +276,10 @@
               map.addLayer(airportsLayer);
             }
           } else if (index === 2) {
-            //Entire US View
+            //Relocate to Seattle
             map.flyTo({
               center: [-98, 39],
-              zoom: 3,
+              zoom: 4,
               pitch: 0,
               speed: 0.5
 
@@ -279,11 +300,11 @@
             }
 
           } else if (index === 3) {
-            //Relocate to Africa
+            //Relocate to Portland
             map.flyTo({
-              center: [19, 2],
-              zoom: 2,
-              pitch: 0,
+              center: [-55, -8],
+              zoom: 4,
+              pitch: 60,
               speed: 0.5
 
             });
@@ -302,6 +323,7 @@
               map.addLayer(airportsLayer);
             }
 
+            map.setStyle('mapbox://styles/mapbox/dark-v10'); // change the base map
           } else if (index === 6) {
 
             map.flyTo({
@@ -330,19 +352,10 @@
               document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
             }
           } else if (index === 1) {
-            // if (map.getLayer("airports-points")) {
-            //   map.removeLayer('airports-points');
-            // }
-
-          } else if (index == 2) {
-            // if (map.getLayer("airports-points")) {
-            //   map.removeLayer('airports-points');
-            // }
-          }
-          else if (index === 3) {
-            // if (map.getLayer("airports-points")) {
-            //   map.removeLayer('airports-points');
-            // }
+            if (map.getLayer("airports-points")) {
+              map.removeLayer('airports-points');
+            }
+          } else if (index === 3) {
             //exit to Portland
             map.setStyle('mapbox://styles/mapbox/light-v10');
           } 
@@ -351,7 +364,6 @@
 
       });
 
-    };
 
     // 5 call the data loading function.
     geojsonFetch();
