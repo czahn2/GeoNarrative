@@ -64,7 +64,7 @@ p {
 
 #intro {
   position: relative;
-  top: 400px;
+  top: 300px;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 50%;
